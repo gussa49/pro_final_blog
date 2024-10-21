@@ -1,0 +1,27 @@
+{% block content %}
+<h2>Crear un nuevo post</h2>
+
+<form method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="titulo">Título del post</label>
+    <input type="text" id="titulo" name="titulo" class="form-control" placeholder="Escribe el título del post" required>
+  </div>
+
+  <div class="form-group">
+    <label for="contenido">Contenido del post</label>
+    <textarea id="contenido" name="contenido" class="form-control" placeholder="Escribe el contenido del post" rows="10" required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Publicar</button>
+
+  {% if messages %}
+    <div class="alert alert-danger mt-3">
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+</form>
+
+<p><a href="{% url 'blog:lista_posts' %}">Volver a la lista de posts</a></p>

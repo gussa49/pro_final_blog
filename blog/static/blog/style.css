@@ -1,0 +1,360 @@
+
+body,  h3, h4, h5 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    line-height: 1.6;
+}
+
+
+h3 {
+    font-size: 1rem;
+}
+
+h4 {
+    font-size: 2.5rem;
+}
+
+h5 {
+    font-size: 5rem;
+}
+
+.cabecera {
+    background-image: url("/static/blog/images/por.hojo2.webp"); 
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    color: white;
+    text-align: center;
+}
+
+.cabecera h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 1; 
+}
+
+.cabecera::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0; 
+}
+
+.menu {
+    position: relative;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu ul li a {
+    color: rgb(75, 6, 6);
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border-radius: 30px; 
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.menu ul li a:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.bloque-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px; 
+    margin-bottom: 20px; 
+}
+
+.bloque-inicio .texto {
+    width: 45%; 
+    padding: 15px; 
+}
+
+.bloque-inicio .imagen {
+    width: 50%; 
+    text-align: center; 
+}
+
+.bloque-inicio .imagen img {
+    max-width: 80%; 
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.bloque-inicio .imagen img:hover {
+    transform: scale(1.1) translateY(-10px);
+}
+
+.bloque-inicio.celeste,
+.bloque-inicio.verde {
+    background-color: #2f0642; 
+}
+
+.bloque-inicio .texto h2 {
+    font-size: 1.8rem; 
+    margin-bottom: 10px;
+}
+
+.bloque-inicio .texto p {
+    font-size: 1rem; 
+    color: #fff; 
+}
+
+/* Sección de Lista de Posts */
+.contenido {
+    padding: 30px;
+    background-color: #2f0642; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.post {
+    background-color: #a6c965; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    margin-bottom: 40px; 
+    transition: transform 0.3s ease; 
+}
+
+.post:hover {
+    transform: translateY(-5px); 
+}
+
+.post h2 {
+    font-size: 2rem; 
+    color: #005f73; 
+    margin-bottom: 15px;
+}
+
+.post p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 15px; 
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffba08;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #faa307; 
+}
+
+/* Footer */
+footer {
+    background-color: #005f73;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Sección del Título del Post */ 
+.post-titulo {
+    background-color: #0077b6;
+    color: rgb(241, 243, 245);
+    padding: 20px; 
+    text-align: center;
+}
+
+.contenedor-titulo h1 {
+    font-size: 2rem; 
+    margin: 0;
+}
+
+/* Sección del Contenido del Post */
+/* Sección del Contenido del Post */ 
+.contenedor-post {
+    display: flex; 
+    width: 100%; 
+    align-items: flex-start; 
+    min-height: 600px; /* Mantener la altura mínima de la sección */
+    background-color: #72adbe;
+
+}
+
+.imagen-post {
+    flex: 1; 
+    height: 100%; /* La imagen ocupará el 100% de la altura disponible */
+    overflow: hidden; 
+}
+
+.imagen-post img {
+    width: 100%; 
+    height: 100%; /* La imagen abarcará todo el alto del div */
+    object-fit: cover; /* Asegura que la imagen mantenga su proporción y se ajuste al espacio */
+    border-radius: 10px; 
+}
+
+.texto-post {
+    flex: 1; 
+    font-size: 0.9rem; 
+    color: #333; 
+    line-height: 1.4; 
+    padding: 10px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    margin-left: 20px; 
+   
+}
+
+/* Sección de Comentarios */
+.post-comentarios {
+    padding: 5px; 
+    background-color: #2f0642;
+    margin-top: 15px; 
+    max-height: 150px; 
+    overflow-y: auto; 
+}
+
+.contenedor-comentarios {
+    margin-top: 5px; 
+}
+
+.comentario-item {
+    padding: 5px; 
+    background-color: rgb(15, 14, 14);
+    border-radius: 10px;
+    margin-bottom: 5px; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+.fecha-comentario {
+    display: block;
+    font-size: 0.7rem; 
+    color: white;
+    margin-top: 2px; 
+}
+
+/* Sección para agregar un comentario */
+.post-agregar-comentario {
+    padding: 5px; 
+    background-color: #2f0642;
+    margin-top: 15px; 
+}
+
+.post-agregar-comentario textarea {
+    width: 100%;
+    padding: 5px; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px; 
+    height: 50px; 
+}
+
+.btn-comentar {
+    background-color: #0077b6;
+    color: white;
+    padding: 6px 12px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contacto.contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: space-around; 
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+#contacto.contacto div {
+    flex: 1 1 200px; 
+    max-width: 300px; 
+    padding: 10px;
+    text-align: center;
+    background-color: #0f4941; 
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+#contacto.contacto div:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    background-color: #126e5d; 
+}
+
+#contacto.contacto p {
+    margin: 3px 0; 
+    font-size: 0.7rem;
+}
+
+.contacto-img {
+    width: 60px; 
+    height: 60px; 
+    object-fit: cover; 
+    border-radius: 50%;
+    margin-bottom: 5px; 
+}
+.sobre-nosotros {
+    background-color: #2f0642;
+    padding: 50px; 
+    text-align: center; 
+}
+
+.sobre-nosotros h2 {
+    font-size: 2.5rem; 
+    color: #005f73; 
+    margin-bottom: 20px; 
+}
+
+.sobre-nosotros p {
+    font-size: 1.2rem; 
+    color: #333; 
+    line-height: 1.6; 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.sobre-nosotros img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    margin-top: 20px;
+}
