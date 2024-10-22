@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.titulo }}</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+
+    <!-- Menú de navegasión -->
+    <nav class="menu">
+        <ul>
+            <li><a href="{% url 'blog:index' %}">Volver a Inicio</a></li>
+            <li><a href="{% url 'blog:lista_posts' %}">Ver los posts del blog</a></li>
+            <li><a href="{% url 'blog:login' %}">Login</a></li>
+            <li><a href="{% url 'blog:register' %}">Registrarse</a></li>
+            <li><a href="{% url 'blog:logout' %}">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seción del Título del Post -->
+    <section class="post-titulo">
+        <div class="contenedor-titulo">
+            <h1>{{ post.titulo }}</h1>
+        </div>
+    </section>
+
+    <!-- Sección del Contenido del Post -->
+    <section class="post-contenido">
+        <div class="contenedor-post">
+            <div class="imagen-post">
+                {% if post.imagen %}
+                    <img src="{{ post.imagen.url }}" alt="Imagen relacionada al post: {{ post.titulo }}">
+                {% else %}
+                    <p>No hay imagen disponible</p>
+                {% endif %}
+            </div>
+            <div class="texto-post">
+                <p>{{ post.contenido }}</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Sección de Comentarios -->
+<!-- Sección de Comentarios -->
+<section class="post-comentarios">
+    <h2>Comentarios</h2>
+    <div class="contenedor-comentarios">
+        <ul>
+            {% for comentario in comentarios %}
+                <li class="comentario-item">
+                    <strong>{{ comentario.autor.username }}:</strong> {{ comentario.contenido }} 
+                    <span class="fecha-comentario">({{ comentario.fecha|date:"d M Y H:i" }})</span>
+                </li>
+            {% empty %}
+                <li>No hay comentarios aún. ¡Sé el primero en comentar!</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<!-- Formulario para agregar un comentario -->
+<section class="post-agregar-comentario">
+    <h3>Agregar un comentario</h3>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="contenido" rows="5" placeholder="Escribe tu comentario aquí..." required></textarea><br>
+        <button type="submit" class="btn-comentar">Comentar</button>
+    </form>
+    
+    {% if not user.is_authenticated %}
+        <p>Para comentar, debes <a href="{% url 'blog:register' %}">registrarte</a> o <a href="{% url 'blog:login' %}">iniciar sesión</a>.</p>
+    {% endif %}
+</section>
+
+
+</body>
+</html>

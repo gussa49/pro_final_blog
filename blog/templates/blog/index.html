@@ -1,0 +1,155 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="cabecera">
+            <div class="titulo-cabecera">
+                <h1>Blog de Inteligencia Artificial</h1>
+                <h2>Informatorio G10</h2>
+
+            </div>
+        </div>
+    </header>
+    
+    <!-- Aquí movemos el menú  la cabecera -->
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="{% url 'blog:lista_posts' %}">Ver los posts del blog</a></li> <!-- Este enlace es clave -->
+                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <section class="inicio" style="margin-top: 0; margin-bottom: 0;">
+        <!-- Primer bloque: -->
+        <div class="bloque-inicio celeste">
+            <div class="texto">
+                <h2>"Explora el Futuro Hoy"</h2>
+                <h3>"Descubre cómo la inteligencia artificial está transformando el mundo. Desde los avances más recientes
+                     hasta aplicaciones prácticas y tendencias futuras,
+                     nuestro blog te mantendrá informado y fascinado. ¡Navega y explora!"
+                    </h3>
+            </div>
+            <div class="imagen">
+                <img src="/static/blog/images/foto1.webp" alt="Imagen de bienvenida">
+            </div>
+        </div>
+    
+        <!-- Segundo bloque:  -->
+        <div class="bloque-inicio verde">
+            <div class="imagen">
+                <img src="/static/blog/images/foto8.png" alt="Imagen de contenido">
+            </div>
+            <div class="texto">
+             <h2>"Innovación IA: Lo Último"</h3>
+                <h3>  "IA en Acción: Casos Reales"</h3>
+                <h3>   "Tendencias Futuras en IA"</h3>
+                <h3>   "Impacto Social de la IA"</h3>
+                <h3>  "Entrevistas con Expertos en IA"
+                    Textos Cortos:
+                </h3>
+                 <h3>"Descubre los avances más recientes en inteligencia artificial que están revolucionando el mundo."
+                    "Explora cómo la IA está cambiando industrias enteras con estos ejemplos reales."
+                    "Mira hacia el futuro con nuestras predicciones sobre la evolución de la IA."
+                    "Conoce el impacto de la IA en nuestra sociedad y lo que significa para el futuro."
+                    "Escucha lo que los principales expertos en IA tienen que decir sobre las tendencias actuales."
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre-nosotros" id="sobre-nosotros">
+        <div class="contenedor">
+            
+            <h2>Sobre Nosotros</h2>
+
+            <h3>
+                
+                En nuestra empresa, creemos que la Inteligencia Artificial (IA) es más que una tecnología; es una herramienta 
+                poderosa que transforma vidas y negocios. Nuestra misión es crear soluciones innovadoras que mejoren la eficiencia,
+                impulsen la creatividad y resuelvan problemas complejos.
+
+            </h3>
+
+            <h2>¿Qué significa la IA para nosotros?</h2>
+
+            <h3>
+                
+                La IA representa la capacidad de aprender y adaptarse continuamente, permitiendo 
+                a las máquinas realizar tareas que antes solo los humanos podían hacer. Desde la automatización 
+                de procesos hasta la personalización de experiencias, la IA está en el corazón de todo lo que hacemos.
+                 Creemos en el poder del aprendizaje continuo y en el impacto positivo que la tecnología puede tener en 
+                nuestras vidas. Únete a nosotros en este viaje de innovación y creatividad.
+            </h3>
+
+            <h2>Nuestro Compromiso:?</h2>
+
+            <h3>
+                
+                Innovación Constante: Nos esforzamos por estar a la vanguardia de la tecnología, desarrollando soluciones que no solo cumplen con las necesidades actuales, sino que también anticipan las del futuro.
+                Impacto Positivo: Creemos en el poder de la IA para generar un impacto positivo en la sociedad, mejorando la calidad de vida y creando nuevas oportunidades.
+                Ética y Transparencia: Nos comprometemos a utilizar la IA de manera ética y transparente, asegurando que nuestras soluciones sean justas y responsables.
+                En resumen, nuestra empresa está dedicada a transformar el mundo a través de la IA, haciendo que la tecnología sea accesible y beneficiosa para todos. ¡Únete a nosotros en este emocionante viaje hacia el futuro!
+                
+            </h3>
+
+
+        </div>
+    </section>
+    
+    <section id="contacto" class="contacto">
+        <div>
+            <img src="{% static 'blog/images/gbraian.jpeg' %}" alt="Foto de Braian" class="contacto-img">
+            <p>*Tourn Braian</p>
+            <p>bariantourn40@gmail.com</p>
+            <p>Cel: 3624331696</p>
+            <p>Redes sociales...</p>
+        </div>
+        <div>
+            <img src="{% static 'blog/images/gborda..jpeg' %}" alt="Foto de Nestor" class="contacto-img">
+            <p>*Borda Nestor Alejandro</p>
+            <p>Bordaa380@gmail.com</p>
+            <p>Cel: 3731537603</p>
+            <p>Redes sociales: Insta: Ale.bordda</p>
+        </div>
+        <div>
+            <img src="{% static 'blog/images/gamalia.jpeg' %}" alt="Foto de Amalia" class="contacto-img">
+            <p>*García María Amalia</p>
+            <p>amaliagarcia60@gmail.com</p>
+            <p>Cel: 3482457713</p>
+            <p>Redes sociales...</p>
+        </div>
+        <div>
+            <img src="{% static 'blog/images/galexd.jpeg' %}" alt="Foto de Alexis" class="contacto-img">
+            <p>*Domínguez Alexis Jonathan</p>
+            <p>dominguezalexis900@gmail.com</p>
+            <p>Cel: 3794090748</p>
+            <p>Redes sociales...</p>
+        </div>
+        <div>
+            <img src="{% static 'blog/images/gustavo.jpg' %}" alt="Foto de Gustavo" class="contacto-img">
+            <p>*Garcia Alberto Gustavo</p>
+            <p>gustavoa_72@hotmail.com</p>
+            <p>Cel: 3734445281</p>
+            <p>Redes sociales...</p>
+        </div>
+    </section>
+    
+
+   <footer style="background-color: #000; color: #fff; text-align: center; padding: 2px;">
+        <p>© 2024 Pro_Final_Blog. Todos los derechos reservados.INFORMATORIO. CHACO.GRUPO.10 </p>
+   </footer> 
+    
+</body>
+</html>

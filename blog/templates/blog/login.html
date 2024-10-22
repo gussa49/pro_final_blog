@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="titulo-cabecera">
+            <h1>Blog de Inteligencia Artificial</h1>
+        </div>
+        
+        <!-- Menú de navegación -->
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="{% url 'blog:index' %}">Inicio</a></li>
+                    <li><a href="{% url 'blog:lista_posts' %}">Ver Posts</a></li>
+                    <li><a href="{% url 'blog:login' %}">Login</a></li>
+                    <li><a href="{% url 'blog:register' %}">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contenido">
+        <div class="pagina-login">
+            <h2>Inicia sesión</h2>
+            <form method="post">
+                {% csrf_token %}
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="background-color: #000; color: #fff; text-align: center; padding: 20px;">
+        <p>© 2024 Pro_Final_Blog. Todos los derechos reservados.INFORMATORIO. CHACO.GRUPO.10.</p>
+    </footer>
+    
+</body>
+</html>

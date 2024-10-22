@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Posts</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="titulo-cabecera">
+            <h1>"Descubre el Mundo de la IA"</h1>
+        </div>
+        
+        <!-- Menú de navegación,  cabecera -->
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="{% url 'blog:index' %}">Volver a Inicio</a></li>
+                    <li><a href="{% url 'blog:lista_posts' %}">Ver los posts del blog</a></li>
+                    <li><a href="{% url 'blog:login' %}">Login</a></li>
+                    <li><a href="{% url 'blog:register' %}">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contenido">
+        <h2>"Únete a la Conversación"</h2>
+        <h2>"Tus pensamientos importan. Regístrate y comenta para ser parte de 
+            la comunidad del futuro de la inteligencia artificial.
+             ¡Comparte tus ideas y haz tu voz escuchada!"</h2>
+
+
+        {% for post in posts %}
+            <div class="post">
+                <h2>{{ post.titulo }}</h2>
+                <p>{{ post.contenido|truncatewords:20 }}</p>
+                <a class="btn" href="{% url 'blog:detalle_post' post.id %}">Leer más</a>
+            </div>
+        {% empty %}
+            <p>No hay posts disponibles.</p>
+        {% endfor %}
+    </section>
+
+    <footer style="background-color: #000; color: #fff; text-align: center; padding: 20px;">
+        <p>©2024 Pro_Final_Blog. Todos los derechos reservados.INFORMATORIO. CHACO.GRUPO.10</p>
+    </footer>
+    
+</body>
+</html>
